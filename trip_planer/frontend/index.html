@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Add your custom CSS rules here */
+        /* Add borders and padding to table cells */
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Set margins and paddings for tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        /* Set margin for the whole table section */
+        #app > * {
+            margin-bottom: 20px;
+        }
+
+        /* Set overflow to auto for table containers to make them scrollable */
+        #users,
+        #trips {
+            overflow-x: auto;
+        }
+
+        /* Add borders to table headers */
+        th {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Alternate row colors */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        /* Hide the tables initially */
+        #dataTables {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRAVEL PLANER</h1>
+    <div id="app">
+        <h2>Add User</h2>
+        <form id="userForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Add User</button>
+        </form>
+        <h2>Add Trip</h2>
+        <form id="tripForm">
+            <input type="number" id="user_id" placeholder="User ID" required>
+            <input type="text" id="destination" placeholder="Destination" required>
+            <input type="date" id="start_date" placeholder="Start Date" required>
+            <input type="date" id="end_date" placeholder="End Date" required>
+            <input type="number" id="budget" placeholder="Budget" required>
+            <button type="submit">Add Trip</button>
+        </form>
+
+        <button id="showDataButton" type="button">SHOW DATA</button>
+        <div id="dataTables">
+            <h2>Users</h2>
+            <table id="users">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Users data will be inserted here -->
+                </tbody>
+            </table>
+            <h2>Trips</h2>
+            <table id="trips">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User ID</th>
+                        <th>Destination</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Budget</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Trips data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
